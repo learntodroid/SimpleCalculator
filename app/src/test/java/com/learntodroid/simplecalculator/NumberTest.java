@@ -34,10 +34,17 @@ public class NumberTest {
     }
 
     @Test
-    public void subtract() {
+    public void subtract_negative() {
         Number number = new Number(1);
         number.subtract(new Number(2));
         Assert.assertEquals(-1, number.getValue());
+    }
+
+    @Test
+    public void subtract_positive() {
+        Number number = new Number(28);
+        number.subtract(new Number(12));
+        Assert.assertEquals(16, number.getValue());
     }
 
     @Test

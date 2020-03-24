@@ -49,22 +49,23 @@ public class CalculatorFragmentViewModel extends AndroidViewModel {
 
     public void calculateResult() {
         overwriteMode.setValue(true);
-        Number result = currentNumberMutableLiveData.getValue();
+//        Number result = currentNumberMutableLiveData.getValue();
+        Number result = storedNumber.getValue();
         switch (currentOperationLiveData.getValue()) {
             case ADD:
-                result.add(storedNumber.getValue());
+                result.add(currentNumberMutableLiveData.getValue());
                 currentNumberMutableLiveData.setValue(result);
                 return;
             case SUBTRACT:
-                result.subtract(storedNumber.getValue());
+                result.subtract(currentNumberMutableLiveData.getValue());
                 currentNumberMutableLiveData.setValue(result);
                 return;
             case MULTIPLY:
-                result.multiply(storedNumber.getValue());
+                result.multiply(currentNumberMutableLiveData.getValue());
                 currentNumberMutableLiveData.setValue(result);
                 return;
             case DIVIDE:
-                result.divide(storedNumber.getValue());
+                result.divide(currentNumberMutableLiveData.getValue());
                 currentNumberMutableLiveData.setValue(result);
                 return;
             default:
