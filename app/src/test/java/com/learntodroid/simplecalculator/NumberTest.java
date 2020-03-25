@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class NumberTest {
-
     @Test
     public void add_two_numbers() {
         Number number = new Number(3);
