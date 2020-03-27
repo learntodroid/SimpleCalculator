@@ -3,6 +3,9 @@ package com.learntodroid.simplecalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
 public class NumberTest {
     @Test
     public void add_two_numbers() {
@@ -51,6 +54,13 @@ public class NumberTest {
         Number number = new Number(12);
         number.multiply(new Number(9));
         Assert.assertEquals(108, number.getValue());
+    }
+
+    @Test
+    public void multiply_hamcrest() {
+        Number number = new Number(12);
+        number.multiply(new Number(9));
+        Assert.assertThat(number.getValue(), is(equalTo(108)));
     }
 
     @Test
